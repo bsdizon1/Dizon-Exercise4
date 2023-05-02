@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      body {
+  background: linear-gradient(90deg, #f6c5d6, #fee6ce, #d2f2c3);
+  background: radial-gradient(circle, #f6c5d6, #fee6ce, #d2f2c3);
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px #f6c5d6, 0 0 100px #f6c5d6, 0 0 120px #f6c5d6, 0 0 140px #f6c5d6;}
+
+    </style>
+
+   
+   
+  
+<title>Exercise 4</title>
+
+
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="value" class="text-primary">Value:</label>
+        <input type="number" class="form-control" id="value" placeholder="Enter value">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="from" class="text-primary" >From:</label>
+        <select class="form-control" id="from">
+          <option value="s1" id="s1">Seconds</option>
+          <option value="m1" id="m1">Minutes</option>
+          <option value="h1" id="h1">Hours</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="to" class="text-primary" >To:</label>
+        <select class="form-control" id="to">
+          <option value="s2" id="s2">Seconds</option>
+          <option value="m2" id="m2">Minutes</option>
+          <option value="h2" id="h2">Hours</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="result" class="text-primary">Result:</label>
+        <input type="text" id="result" value="Result">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button onclick="convert()" class="btn btn-primary">Convert</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                          
+                          <script>
+                            function convert() {
+
+  var value = parseFloat(document.getElementById("value").value);
+  var from = document.getElementById("from").value;
+  var to = document.getElementById("to").value;
+
+  
+  if (from == "m1") {
+    value *= 60; 
+  } else if (from == "h1") {
+    value *= 3600; 
+  }
+
+ 
+  var result = "";
+  if (to == "s2") {
+    result = value + " second/s";
+  } else if (to == "m2") {
+    result = (value / 60) + " minute/s";
+  } else if (to == "h2") {
+    result = (value / 3600) + " hour/s";
+  }
+
+  
+  document.getElementById("result").value = result;
+}
+                          </script>
+    
+</body>
+</html>
+
+                            
+                            
+                            
+                            
+
